@@ -1,21 +1,58 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      foods: ["chicken", "beef", "pork", "onion", "tomato", "bellpepper"]
+    };
+  }
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    let displayFoods = this.state.foods.map((food, index) => {
+      return <h5 key={index}>{food}</h5>;
+    });
+    return <div>{displayFoods}</div>;
   }
 }
 
 export default App;
+
+// import React, { Component } from "react";
+
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       foods: ["chicken", "beef", "pork", "onion", "tomato", "bellpepper"]
+//     };
+//   }
+
+//   render() {
+//     let displayFoods = this.state.foods.map((element, index) => {
+//       return <h4 key={index}>{element}</h4>;
+//     });
+//     return <div>{displayFoods}</div>;
+//   }
+// }
+
+// export default App;
+
+// import React, { Component } from "react";
+
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {
+//       foods: ["chicken", "beef", "pork", "onion", "tomato", "bellpepper"]
+//     };
+//   }
+//   render() {
+//     let foodsToDisplay = this.state.foods.map((element, index) => {
+//       return <h2 key={index}>{element}</h2>;
+//     });
+
+//     return <div className="App">{foodsToDisplay}</div>;
+//   }
+// }
+
+// export default App;
